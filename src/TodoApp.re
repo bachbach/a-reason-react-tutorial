@@ -34,6 +34,7 @@ let make = (_children) => {
         (item: TodoType.item) => item.id === id ? {...item, completed: !item.completed} : item,
         items
       );
+
       ReasonReact.Update({items: items}) 
     | RemoveItem(id) => 
       let items = List.filter((item: TodoType.item) => item.id !== id, items);
